@@ -4,13 +4,13 @@ inputs:
   paths: 
     description: "String with the paths to the files to be validated"
     required: true
-  secret_input: 
+  secret-input: 
      description: "Secrets"
      required: true
 outputs: 
   syntax-check: 
     description: "Checks if the quiz file has some common .md syntax errors"
-    value: "${{ steps.syntax-check.outputs }}"
+    value: ${{ steps.syntax-check.outputs }}
 runs:
   using: composite
   steps: 
