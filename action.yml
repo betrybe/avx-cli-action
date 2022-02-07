@@ -17,7 +17,7 @@ runs:
     - name: "Fetch Avx CLI"
       uses: actions/checkout@v2
       with: 
-        path: .github/actions/avx-cli
+        # path: .github/actions/avx-cli
         ref: main
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
@@ -27,9 +27,9 @@ runs:
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-    - run: ls
+    - run: ls -a
       shell: bash
-    - run: cd .github/actions/avx-cli
+    - run: cd ./avx-cli
       shell: bash
     - run: mix deps.get
       shell: bash
