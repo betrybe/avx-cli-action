@@ -25,6 +25,8 @@ runs:
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
+      run: mix deps.get
+      run: mix release
       run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
 
     - name: "Run Avx CLI"
