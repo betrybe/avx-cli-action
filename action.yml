@@ -20,7 +20,7 @@ runs:
         path: .github/actions/avx-cli
         ref: main
         repository: betrybe/avx-cli
-        token: ${{ inputs.secret_input.GIT_HUB_PAT }}
+        token: ${{ inputs.secret-input.GIT_HUB_PAT }}
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
