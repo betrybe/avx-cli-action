@@ -27,6 +27,8 @@ runs:
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3" 
+    - run: cd .github/actions/avx-cli
+      shell: bash
     - run: mix deps.get
       shell: bash
     - run: mix release
