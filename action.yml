@@ -8,7 +8,7 @@ inputs:
      description: "Secrets"
      required: true
 outputs: 
-  syntax-check: 
+  syntax-check-output: 
     description: "Checks if the quiz file has some common .md syntax errors"
     value: ${{ steps.syntax-check.outputs }}
 runs:
@@ -20,7 +20,7 @@ runs:
         path: .github/actions/avx-cli
         ref: main
         repository: betrybe/avx-cli
-        token: ${{ inputs.secret-input.GIT_HUB_PAT }}
+        token: ${{ inputs.secret-input }}
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
