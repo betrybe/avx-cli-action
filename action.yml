@@ -26,9 +26,11 @@ runs:
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
       with: 
         elixir-version: "1.12.2"
-        otp-version: "22.3"
+        otp-version: "22.3" 
     - run: mix deps.get
+      shell: bash
     - run: mix release
+      shell: bash
     - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
       shell: bash
 
