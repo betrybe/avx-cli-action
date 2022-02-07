@@ -29,10 +29,6 @@ runs:
         otp-version: "22.3"
     - run: cd ./.github
       shell: bash
-    - run: ls -a
-      shell: bash
-    - run: cd ./actions/avx-cli
-      shell: bash
     - run: mix deps.get
       shell: bash
     - run: mix release
