@@ -31,4 +31,4 @@ runs:
       run: "echo avx syntax -f $PATHS"
       shell: bash
       env: 
-          PATHS: "${{ inputs.paths }}"
+        PATHS: "${{ inputs.paths }}"
