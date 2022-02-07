@@ -35,7 +35,7 @@ runs:
       shell: bash
 
     - id: syntax-check
-    - run: "echo avx syntax -f $PATHS"
+      run: "echo avx syntax -f $PATHS"
       shell: bash
       env: 
         PATHS: ${{ inputs.paths }}
