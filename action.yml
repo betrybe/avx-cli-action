@@ -4,6 +4,9 @@ inputs:
   paths: 
     description: "String with the paths to the files to be validated"
     required: true
+  secret_input: 
+     description: "Secrets"
+     required: true
 outputs: 
   syntax-check: 
     description: "Checks if the quiz file has some common .md syntax errors"
@@ -17,21 +20,21 @@ runs:
         path: .github/actions/avx-cli
         ref: main
         repository: betrybe/avx-cli
-        token: ${{ secrets.GIT_HUB_PAT }}
+        token: ${{ inputs.secret_input.GIT_HUB_PAT }}
 
     - name: "Setup Elixir"
-      shell: bash
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-      run: mix deps.get
-      run: mix release
-      run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
+      shell: bash
+    - run: mix deps.get
+    - run: mix release
+    - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
 
     - name: "Run Avx CLI"
       id: syntax-check
-      run: "echo avx syntax -f $PATHS"
+    - run: "echo avx syntax -f $PATHS"
       shell: bash
       env: 
         PATHS: ${{ inputs.paths }}
