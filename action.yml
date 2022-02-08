@@ -17,7 +17,7 @@ runs:
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
       env:
-        $BAKEWARE_CACHE: "${{ github.workspace }}/.cache/bakeware"
+        $BAKEWARE_CACHE: "/home/runner/work/quizzes/quizzes/.cache/bakeware"
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
