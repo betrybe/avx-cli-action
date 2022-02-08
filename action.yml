@@ -23,7 +23,7 @@ runs:
         elixir-version: "1.12.2"
         otp-version: "22.3"
       env:
-        $BAKEWARE_CACHE: "/home/runner/work/quizzes/quizzes/.cache/bakeware"
+        BAKEWARE_CACHE: "/home/runner/work/quizzes/quizzes/.cache/bakeware"
     - run: ls -a
       shell: bash
     - run: pwd
