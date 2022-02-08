@@ -30,7 +30,7 @@ runs:
       shell: bash
     - run: mix release
       shell: bash
-    - run: alias avx="\"_build/prod/rel/bakeware/avx_cli\""
+    - run: alias avx="_build/prod/rel/bakeware/avx_cli"
       shell: bash
     - run: pwd
       shell: bash
