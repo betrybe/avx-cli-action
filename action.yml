@@ -32,7 +32,7 @@ runs:
       shell: bash
     - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
       shell: bash
-    - run: mkdir ./home/runner/.cache/bakeware/
+    - run: pwd
       shell: bash
     - run: echo "TESTE $(./_build/prod/rel/bakeware/avx_cli syntax -f ${{ inputs.paths }})"
       shell: bash
