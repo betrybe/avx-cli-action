@@ -16,18 +16,19 @@ runs:
         ref: github_action
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
+        path: ./home/runner/work/avx-cli
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-    - run: ls -a
-      shell: bash
-    - run: pwd
-      shell: bash
-    - run: echo $GITHUB_WORKSPACE
-      shell: bash
+    # - run: ls -a
+    #   shell: bash
+    # - run: pwd
+    #   shell: bash
+    # - run: echo $GITHUB_WORKSPACE
+    #   shell: bash
     - run: mix deps.get
       shell: bash
     - run: mix release
