@@ -24,6 +24,7 @@ runs:
         elixir-version: "1.12.2"
         otp-version: "22.3"
     - run: cd ./home/runner/work/avx-cli
+      shell: bash
     - run: ls -a
       shell: bash
     - run: pwd
