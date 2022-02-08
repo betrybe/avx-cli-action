@@ -33,6 +33,6 @@ runs:
     - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
       shell: bash
 
-    - id: syntax-check
+    - name: "Run Syntax Validation"
     - run: echo avx syntax -f ${{ inputs.paths }}
       shell: bash
