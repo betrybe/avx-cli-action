@@ -13,7 +13,7 @@ runs:
     - name: "Fetch Avx CLI"
       uses: actions/checkout@v2
       with: 
-        ref: main
+        ref: github_action
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
     - run: ls
