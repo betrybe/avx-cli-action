@@ -30,11 +30,9 @@ runs:
       shell: bash
     - run: mix release
       shell: bash
-    - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
+    - run: alias avx="\"_build/prod/rel/bakeware/avx_cli\""
       shell: bash
     - run: pwd
       shell: bash
-    - run: echo "TESTE $(./_build/prod/rel/bakeware/avx_cli syntax -f ${{ inputs.paths }})"
-      shell: bash
-    - run: echo "Resultado $(avx syntax -f ${{ inputs.paths }})"
+    - run: echo "TESTE $(avx syntax -f "${{ inputs.paths }}")"
       shell: bash
