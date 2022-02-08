@@ -24,7 +24,9 @@ runs:
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-    - run: ls
+    - run: ls -a
+      shell: bash
+    - run: pwd
       shell: bash
     - run: mix deps.get
       shell: bash
@@ -32,7 +34,5 @@ runs:
       shell: bash
     - run: alias avx="_build/prod/rel/bakeware/avx_cli"
       shell: bash
-    - run: pwd
-      shell: bash
-    - run: echo "TESTE $(avx syntax -f "${{ inputs.paths }}")"
+    - run: echo "TESTE $(_build/prod/rel/bakeware/avx_cli syntax -f "${{ inputs.paths }}")"
       shell: bash
