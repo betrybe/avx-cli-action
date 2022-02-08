@@ -16,7 +16,6 @@ runs:
         ref: github_action
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
-        path: ./.github/actions/avx-cli-action/avx-cli
     - run: ls
       shell: bash
 
@@ -35,7 +34,5 @@ runs:
       shell: bash
     - run: pwd
       shell: bash
-    - run: echo "TESTE $(avx syntax -f "../front-end/bloco-10/quiz-145-10-1")
+    - run: echo "TESTE $(avx syntax -f "${{ inputs.paths }}")"
       shell: bash
-   # - run: echo "TESTE $(avx syntax -f "${{ inputs.paths }}")"
-      #shell: bash
