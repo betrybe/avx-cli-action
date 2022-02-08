@@ -16,14 +16,14 @@ runs:
         ref: github_action
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
-      env:
-        $BAKEWARE_CACHE: "/home/runner/work/quizzes/quizzes/.cache/bakeware"
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
+      env:
+        $BAKEWARE_CACHE: "/home/runner/work/quizzes/quizzes/.cache/bakeware"
     - run: ls -a
       shell: bash
     - run: pwd
