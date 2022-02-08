@@ -16,20 +16,21 @@ runs:
         ref: github_action
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
-        path: ./home/runner/work/avx-cli
+      env:
+        $BAKEWARE_CACHE: "${{ $GITHUB_WORKSPACE }}/.cache/bakeware"
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-    - run: cd ./home/runner/work/avx-cli
-      shell: bash
     - run: ls -a
       shell: bash
     - run: pwd
       shell: bash
     - run: echo $GITHUB_WORKSPACE
+      shell: bash
+    - run: echo $BAKEWARE_CACHE
       shell: bash
     - run: mix deps.get
       shell: bash
@@ -39,3 +40,6 @@ runs:
       shell: bash
     - run: echo "TESTE $(_build/prod/rel/bakeware/avx_cli syntax -f "${{ inputs.paths }}")"
       shell: bash
+
+      # /home/runner/.cache/bakeware/.tmp/anc7FY??:
+      # /home/runner/work/quizzes/quizzes
