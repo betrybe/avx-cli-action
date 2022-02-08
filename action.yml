@@ -16,8 +16,8 @@ runs:
         ref: main
         repository: betrybe/avx-cli
         token: ${{ inputs.secret-input }}
-      - run: ls
-        shell: bash
+    - run: ls
+      shell: bash
 
     - name: "Setup Elixir"
       uses: erlef/setup-beam@885971a72ed1f9240973bd92ab57af8c1aa68f24
