@@ -32,5 +32,5 @@ runs:
       shell: bash
     - run: "alias avx=\"_build/prod/rel/bakeware/avx_cli\""
       shell: bash
-    - run: echo "avx syntax -f ${{ inputs.paths }}"
+    - run: echo "Resultado $(avx syntax -f ${{ inputs.paths }})"
       shell: bash
