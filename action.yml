@@ -34,7 +34,5 @@ runs:
       shell: bash
 
     - id: syntax-check
-    - run: cd
-      shell: bash
     - run: echo avx syntax -f ${{ inputs.paths }}
       shell: bash
