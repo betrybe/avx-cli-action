@@ -24,14 +24,6 @@ runs:
       with: 
         elixir-version: "1.12.2"
         otp-version: "22.3"
-    - run: ls -a
-      shell: bash
-    - run: pwd
-      shell: bash
-    - run: echo $GITHUB_WORKSPACE
-      shell: bash
-    - run: echo $BAKEWARE_CACHE
-      shell: bash
     - run: mkdir -p /home/runner/work/quizzes/quizzes/.cache/bakeware/.tmp
       shell: bash
     - run: mix deps.get
@@ -40,5 +32,5 @@ runs:
       shell: bash
     - run: alias avx="_build/prod/rel/bakeware/avx_cli"
       shell: bash
-    - run: echo "TESTE $(_build/prod/rel/bakeware/avx_cli syntax -f "${{ inputs.paths }}")"
+    - run: echo "$(_build/prod/rel/bakeware/avx_cli syntax -f "${{ inputs.paths }}")"
       shell: bash
