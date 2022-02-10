@@ -15,8 +15,7 @@ runs:
     - name: "Fetch Avx CLI"
       uses: actions/checkout@v2
       with: 
-        ref: github_action
-        repository: betrybe/avx-cli
+        repository: betrybe/avx-cli@0.0.68
         token: ${{ inputs.secret-input }}
 
     - name: "Setup Elixir"
